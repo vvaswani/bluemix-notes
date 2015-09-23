@@ -90,7 +90,7 @@ $app->get('/view/:id', function ($id) use ($app, $db) {
   $app->render('view.tpl.php', array('note' => $note));
 });
 
-// handler to display specified note
+// handler to display legal terms
 $app->get('/legal', function () use ($app) {
   $app->render('legal.tpl.php');
 });

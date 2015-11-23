@@ -10,13 +10,6 @@ $app = new \Slim\Slim(array(
   'templates.path' => './views'
 ));
 
-// if BlueMix VCAP_SERVICES environment available
-// overwrite with credentials from BlueMix
-if ($services = getenv("VCAP_SERVICES")) {
-  $services_json = json_decode($services, true);
-  $config['db_uri'] = $services_json["mongolab"][0]["credentials"]["uri"];
-} 
-
 $app->config = $config;
 
 // extract database name from URI
